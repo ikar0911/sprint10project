@@ -9,7 +9,7 @@ def positive_assert(kit_name):
     assert kit_response.json()["name"] == kit_name
 
 def negative_assert_code_400(kit_name):
-    user_response = sender_stand_request.post_new_user() #Создание пользователя
+    user_response = sender_stand_request.post_new_user() #Создание пользователяj
     kit_auth_token = user_response.json()["authToken"] #Передача автотокена
     kit_response = sender_stand_request.post_new_client_kit(kit_name, kit_auth_token) #Вызов функции создания набора
     assert kit_response.status_code == 400
